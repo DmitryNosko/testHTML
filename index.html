@@ -41,6 +41,24 @@
         button:hover {
             background-color: #45a049;
         }
+
+        /* Фиксируем кнопку внизу экрана */
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .fixed-button:hover {
+            background-color: #45a049;
+        }
     </style>
     <script>
         // Отправка данных о заказе товара
@@ -79,11 +97,10 @@
             <p>Price: $100</p>
             <button onclick="sendOrder(3)">Order Now</button>
         </div>
-
-        <!-- Кнопка для открытия второй mini-app -->
-        <div style="margin-top: 30px;">
-            <button onclick="openSecondApp()">Open Second Mini-App</button>
-        </div>
     </div>
+
+    <!-- Фиксированная кнопка для открытия второй mini-app -->
+    <button class="fixed-button" onclick="openSecondApp()">Open Second Mini-App</button>
+
 </body>
 </html>
