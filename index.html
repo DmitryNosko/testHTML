@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,9 +43,16 @@
         }
     </style>
     <script>
+        // Отправка данных о заказе товара
         function sendOrder(productId) {
             Telegram.WebApp.sendData(JSON.stringify({ product_id: productId }));
         }
+
+        // Отправка данных для открытия второй mini-app
+        function openSecondApp() {
+            Telegram.WebApp.sendData(JSON.stringify({ action: 'open_second_app' }));
+        }
+
         window.onload = function () {
             Telegram.WebApp.ready(); 
         };
@@ -70,6 +78,11 @@
             <h3>Puma RS-X</h3>
             <p>Price: $100</p>
             <button onclick="sendOrder(3)">Order Now</button>
+        </div>
+
+        <!-- Кнопка для открытия второй mini-app -->
+        <div style="margin-top: 30px;">
+            <button onclick="openSecondApp()">Open Second Mini-App</button>
         </div>
     </div>
 </body>
