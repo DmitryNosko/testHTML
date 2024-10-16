@@ -69,6 +69,7 @@
             } else {
                 console.log("WebApp не запущен внутри Telegram");
             }
+            Telegram.WebApp.sendData(JSON.stringify({ log: "Отправка данных для продукта: " + productId }));
         }
 
         function openSecondApp() {
@@ -78,6 +79,7 @@
             } else {
                 console.log("WebApp не запущен внутри Telegram");
             }
+            Telegram.WebApp.sendData(JSON.stringify({ log: "openSecondApp pressed" }));
         }
 
         window.onload = function () {
