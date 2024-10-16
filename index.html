@@ -63,11 +63,13 @@
     <script>
         // Отправка данных о заказе товара
         function sendOrder(productId) {
+            console.log("Отправка данных для продукта: " + productId);
             Telegram.WebApp.sendData(JSON.stringify({ product_id: productId }));
         }
 
         // Отправка данных для открытия второй mini-app
         function openSecondApp() {
+            console.log("Открыть второй mini app: " + productId);
             Telegram.WebApp.sendData(JSON.stringify({ action: 'open_second_app' }));
         }
 
