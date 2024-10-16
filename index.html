@@ -61,16 +61,23 @@
         }
     </style>
     <script>
-        // Отправка данных о заказе товара
+        
         function sendOrder(productId) {
-            console.log("Отправка данных для продукта: " + productId);
-            Telegram.WebApp.sendData(JSON.stringify({ product_id: productId }));
+            if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+                console.log("Отправка данных для продукта: " + productId);
+                Telegram.WebApp.sendData(JSON.stringify({ product_id: productId }));
+            } else {
+                console.log("WebApp не запущен внутри Telegram");
+            }
         }
 
-        // Отправка данных для открытия второй mini-app
         function openSecondApp() {
-            console.log("Открыть второй mini app: " + productId);
-            Telegram.WebApp.sendData(JSON.stringify({ action: 'open_second_app' }));
+            if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+                console.log("Открытие второй mini-app");
+                Telegram.WebApp.sendData(JSON.stringify({ action: 'open_second_app' }));
+            } else {
+                console.log("WebApp не запущен внутри Telegram");
+            }
         }
 
         window.onload = function () {
