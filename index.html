@@ -52,13 +52,16 @@
       tg.MainButton.textColor = "#F55353";
       tg.MainButton.color = "#143F6B";
       tg.MainButton.setParams({"color": "#143F6B"});
+      tg.MainButton.enable()
       
       let orderNowButton = document.getElementById("button1"); 
       orderNowButton.addEventListener('click', function() {
          if (tg.MainButton.isVisible) {
             tg.MainButton.hide()
+            tg.MainButton.enable()
          } else {
             tg.MainButton.show()
+            tg.MainButton.enable()
          }
       });
 
