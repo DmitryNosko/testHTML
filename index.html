@@ -62,6 +62,12 @@
         }
     </style>
     <script>
+         window.Telegram.WebApp.MainButton.text = "Changed Text"; //изменяем текст кнопки 
+         window.Telegram.WebApp.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
+         window.Telegram.WebApp.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+         window.Telegram.WebApp.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+         window.Telegram.WebApp.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
+        
         function sendOrder(productId) {
             if (typeof window.Telegram !== 'undefined' && window.Telegram.WebApp) {
                 console.log("Отправка данных для продукта: " + productId);
@@ -75,12 +81,16 @@
         function openSecondApp() {
             if (typeof window.Telegram !== 'undefined' && window.Telegram.WebApp) {
                 console.log("Открытие второй mini-app");
-                window.Telegram.WebApp.sendData(JSON.stringify({ action: 'open_second_app' }));
+                window.Telegram.WebApp.sendData("some string");
             } else {
                 console.log("WebApp не запущен внутри Telegram");
             }
-            window.Telegram.WebApp.sendData(JSON.stringify({ log: "openSecondApp pressed" }));
         }
+
+        Telegram.WebApp.onEvent('mainButtonClicked', function(){
+              tg.sendData("some string that we need to send"); 
+              //при клике на основную кнопку отправляем данные в строковом виде
+        });
 
         window.onload = function () {
             window.Telegram.WebApp.ready(); 
