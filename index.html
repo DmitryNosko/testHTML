@@ -5,59 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sneaker Shop</title>
     <style>
+        /* Минимальный стиль для базовой разметки */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            color: #333;
-        }
-        .container {
-            padding: 20px;
-        }
-        .product {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 10px;
-            display: inline-block;
-            width: 250px;
-        }
-        .product h3 {
-            color: #555;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-
-        /* Фиксируем кнопку внизу экрана */
-        .fixed-button {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            cursor: pointer;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-        .fixed-button:hover {
-            background-color: #45a049;
         }
     </style>
     <script>
@@ -77,30 +28,30 @@
     </script>
 </head>
 <body>
-    <div class="container">
+    <div>
         <h1>Sneaker Shop</h1>
 
-        <div class="product">
+        <div>
             <h3>Nike Air Max</h3>
             <p>Price: $120</p>
-            <button onclick="sopenSecondApp()">Order</button>
+            <button onclick="sendOrder(1)">Order</button>
         </div>
 
-        <div class="product">
+        <div>
             <h3>Adidas Yeezy</h3>
             <p>Price: $220</p>
-            <button onclick="openSecondApp()">Order</button>
+            <button onclick="sendOrder(2)">Order</button>
         </div>
 
-        <div class="product">
+        <div>
             <h3>Puma RS-X</h3>
             <p>Price: $100</p>
-            <button onclick="openSecondApp()">Order</button>
+            <button onclick="sendOrder(3)">Order</button>
         </div>
     </div>
 
-    <!-- Фиксированная кнопка для открытия второй mini-app -->
-    <button class="fixed-button" onclick="openSecondApp()">Open Second Mini-App</button>
+    <!-- Кнопка для открытия второй mini-app -->
+    <button onclick="openSecondApp()">Open Second Mini-App</button>
 
 </body>
 </html>
