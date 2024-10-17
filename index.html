@@ -56,27 +56,24 @@
    tg.expand();
 
    tg.MainButton.text = "Open Store";
-   // tg.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
-   tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
-   tg.MainButton.color = "#4CAF50"; //изменяем цвет бэкграунда кнопки
-   // tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
+   tg.MainButton.textColor = "#F55353"; // изменяем цвет текста кнопки
+   tg.MainButton.color = "#4CAF50"; // изменяем цвет фона кнопки
 
-   let btn = document.getElementById("btn"); //получаем кнопку скрыть/показать 
+   let btn = document.getElementById("btn"); // получаем кнопку скрыть/показать
 
-   btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-      if (tg.MainButton.isVisible){ //если кнопка показана 
-         tg.MainButton.hide() //скрываем кнопку 
-      }
-      else{ //иначе
-         tg.MainButton.show() //показываем 
-         tg.MainButton.enable()
+   btn.addEventListener('click', function(){ // событие на нажатие html-кнопки
+      if (tg.MainButton.isVisible){ // если кнопка показана 
+         tg.MainButton.hide(); // скрываем кнопку 
+      } else { // иначе
+         tg.MainButton.show(); // показываем 
+         tg.MainButton.enable(); // активируем кнопку
       }
    });
 
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      tg.sendData("some string that we need to send"); 
-      const botUrl = "https://t.me/SneakersMiniApp_bot";
-      window.location.href = botUrl;
+      // Перенаправляем на mini-app другого бота
+      const miniAppUrl = "https://t.me/SneakersMiniApp_bot?attach=your_web_app";
+      window.location.href = miniAppUrl;
    });
 </script>
 </html>
