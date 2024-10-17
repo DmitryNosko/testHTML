@@ -71,9 +71,7 @@
    });
 
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      // Перенаправляем на mini-app другого бота
-      const miniAppUrl = "https://t.me/SneakersMiniApp_bot?attach=your_web_app";
-      window.location.href = miniAppUrl;
+      tg.sendData("some string that we need to send"); 
    });
 </script>
 </html>
